@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 270px;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 15px;
+      background: #1e1e1e;
+      color: #ffffff;
+    }
+    h3 { margin: 0 0 12px 0; font-size: 16px; }
+    label { font-size: 12px; color: #bbbbbb; display: block; margin-bottom: 4px; }
+    textarea, input[type="number"] {
+      width: 100%;
+      box-sizing: border-box;
+      background: #2d2d2d;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 8px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    textarea { height: 80px; resize: none; }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      background: #0078d4;
+      color: white;
+    }
+    button:disabled {
+      background: #444;
+      color: #888;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+  <h3>Timed Website Blocker</h3>
+
+  <label for="blockedSites">Websites to block (one per line):</label>
+  <textarea id="blockedSites" placeholder="youtube.com&#10;instagram.com&#10;reddit.com"></textarea>
+
+  <label for="minutes">Duration (minutes):</label>
+  <input type="number" id="minutes" min="1" max="1440" value="30">
+
+  <button id="startBtn">Start Focus Block</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
